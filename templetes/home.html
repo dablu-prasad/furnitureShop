@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block homeActive%}active{%endblock homeActive%}
+{%block title%}Home{%endblock title%}
+{%block body%}
+
+<div class="container my-3">
+    <h2 class="text-center">Me at a glance</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{%static '/img/p1.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Designer Table</h5><h1><Strong>Price:</Strong><b>{{price}}</b></h1>
+                    <p class="card-text">About this item
+Table Dimension: Length (45 Inch) Width (16 Inch) Height (29.5 Inch), Chair Dimension: Height (19 Inch) Width (17 Inch) Length (33 Inch)
+Primary Material : Solid Rosewood Sheesham Wood
+Style: Contemporary, Color:- Natural Brown Finish
+The product requires basic self assembly at customers end and comes with self assembly instructions along with necessary accessories.
+The table features in space saving, smart and elegant, beliving that it will bring you much convenience no matter when you are reading or surfing on-line.</p>
+                    <a href="/carddetail" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock body%}

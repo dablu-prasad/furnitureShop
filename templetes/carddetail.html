@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+<style>
+    input[type=text][type=password]{
+    border-radius:8px;
+    width:600px;
+    height:16px;
+    }
+</style>
+
+<div style="color:Black;border:1px solid white;border-radius:8px;background-color:white;padding:50px">
+
+
+
+
+<h1 align="center" style="font-family:cursive;color:red">No Any Transaction Available</h1>
+
+
+
+    <h3><strong>Make Payment - Enter Your Card Details</strong></h3><hr>
+
+    <div><img src="{% static 'img\atm1.jpg' %}" style="width:110px;height:86px">
+        <img src="{% static 'img\atm2.jpg' %}" style="width:110px;height:86px">
+        <form action="/carddetail" method="post">
+        {% csrf_token %}
+        <input type="number" placeholder="Credit Card Number" id='cardnumber' name="cardnumber" style="border-radius:8px;width:600px;height:35px;" required><br><br>
+        <input type="text" placeholder="ATM Customer Name" id='cardholdername' name="cardholdername" style="border-radius:8px;width:600px;height:35px;" required><br><br>
+        <input type="password" placeholder="cvv number" id='cvvnumber' name="cvvnumber"  style="border-radius:8px;width:600px;height:35px;" required><br><br>
+        <input type="number" placeholder="Expiry Month" id='expmonth' name="expmonth" style="border-radius:8px;width:300px;height:35px;" required>
+        <input type="number" placeholder="Expiry Year" id='expyear'name="expyear" style="border-radius:8px;width:300px;height:35px;" required><br>
+<h2 style="font-family:cursive;color:red">Total Amount to Pay : {{price}}.00/-</h2>
+        <br><br><input type="submit" value="Make Payment" style="color:white;border-radius:8px;width:215px;height:35px;background-color:#333;border:1px solid black">
+    </form>
+
+
+</div>
+</div>
+{% endblock body%}
